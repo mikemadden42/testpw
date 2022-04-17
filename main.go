@@ -14,12 +14,12 @@ func main() {
 		reader := bufio.NewReader(os.Stdin)
 		password, _ := reader.ReadString('\n')
 
-		passwordStenght := zxcvbn.PasswordStrength(password, nil)
+		passwordStrength := zxcvbn.PasswordStrength(password, nil)
 
 		fmt.Printf("Password score    (0-4): %d\nEstimated entropy (bit): %f\nEstimated time to crack: %s\n\n",
-			passwordStenght.Score,
-			passwordStenght.Entropy,
-			passwordStenght.CrackTimeDisplay,
+			passwordStrength.Score,
+			passwordStrength.Entropy,
+			passwordStrength.CrackTimeDisplay,
 		)
 	}
 }
